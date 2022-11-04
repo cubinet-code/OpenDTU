@@ -1,6 +1,7 @@
 export interface ValueObject {
     v: number, // value
     u: string, // unit
+    d: number, // digits
 };
 
 export interface InverterStatistics {
@@ -30,4 +31,13 @@ export interface Inverter {
     [key: number]: InverterStatistics,
 };
 
-export interface Inverters extends Array<Inverter>{};
+export interface Total {
+    Power: ValueObject,
+    YieldDay: ValueObject,
+    YieldTotal: ValueObject,
+};
+
+export interface LiveData {
+    inverters: Inverter[],
+    total: Total,
+}
